@@ -52,18 +52,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(105, 56);
+            this.label1.Location = new System.Drawing.Point(52, 29);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 34);
+            this.label1.Size = new System.Drawing.Size(55, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "https://";
             // 
             // textServer
             // 
             this.textServer.Font = new System.Drawing.Font("Arial", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textServer.Location = new System.Drawing.Point(220, 51);
+            this.textServer.Location = new System.Drawing.Point(110, 26);
+            this.textServer.Margin = new System.Windows.Forms.Padding(2);
             this.textServer.Name = "textServer";
-            this.textServer.Size = new System.Drawing.Size(466, 39);
+            this.textServer.Size = new System.Drawing.Size(235, 23);
             this.textServer.TabIndex = 1;
             this.textServer.TextChanged += new System.EventHandler(this.textServer_TextChanged);
             // 
@@ -71,9 +73,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(114, 123);
+            this.label2.Location = new System.Drawing.Point(57, 63);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 34);
+            this.label2.Size = new System.Drawing.Size(49, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "userid:";
             // 
@@ -81,9 +84,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(72, 189);
+            this.label3.Location = new System.Drawing.Point(36, 98);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 34);
+            this.label3.Size = new System.Drawing.Size(71, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "password:";
             // 
@@ -97,9 +101,10 @@
             "PUT",
             "DELETE",
             "PATCH"});
-            this.comboMethod.Location = new System.Drawing.Point(1684, 50);
+            this.comboMethod.Location = new System.Drawing.Point(844, 26);
+            this.comboMethod.Margin = new System.Windows.Forms.Padding(2);
             this.comboMethod.Name = "comboMethod";
-            this.comboMethod.Size = new System.Drawing.Size(170, 40);
+            this.comboMethod.Size = new System.Drawing.Size(85, 24);
             this.comboMethod.TabIndex = 5;
             this.comboMethod.Text = "PUT";
             this.comboMethod.SelectedIndexChanged += new System.EventHandler(this.comboMethod_SelectedIndexChanged);
@@ -107,28 +112,31 @@
             // textUserID
             // 
             this.textUserID.Font = new System.Drawing.Font("Arial", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textUserID.Location = new System.Drawing.Point(220, 116);
+            this.textUserID.Location = new System.Drawing.Point(110, 60);
+            this.textUserID.Margin = new System.Windows.Forms.Padding(2);
             this.textUserID.Name = "textUserID";
-            this.textUserID.Size = new System.Drawing.Size(229, 39);
+            this.textUserID.Size = new System.Drawing.Size(150, 23);
             this.textUserID.TabIndex = 6;
             this.textUserID.TextChanged += new System.EventHandler(this.textUserID_TextChanged);
             // 
             // textPassword
             // 
             this.textPassword.Font = new System.Drawing.Font("Arial", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPassword.Location = new System.Drawing.Point(220, 184);
+            this.textPassword.Location = new System.Drawing.Point(110, 95);
+            this.textPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textPassword.Name = "textPassword";
             this.textPassword.PasswordChar = '●';
-            this.textPassword.Size = new System.Drawing.Size(229, 39);
+            this.textPassword.Size = new System.Drawing.Size(150, 23);
             this.textPassword.TabIndex = 7;
             this.textPassword.UseSystemPasswordChar = true;
             this.textPassword.TextChanged += new System.EventHandler(this.textPassword_TextChanged);
             // 
             // btnExecute
             // 
-            this.btnExecute.Location = new System.Drawing.Point(1684, 187);
+            this.btnExecute.Location = new System.Drawing.Point(844, 97);
+            this.btnExecute.Margin = new System.Windows.Forms.Padding(2);
             this.btnExecute.Name = "btnExecute";
-            this.btnExecute.Size = new System.Drawing.Size(170, 56);
+            this.btnExecute.Size = new System.Drawing.Size(85, 29);
             this.btnExecute.TabIndex = 8;
             this.btnExecute.Text = "E&xecute";
             this.btnExecute.UseVisualStyleBackColor = true;
@@ -138,9 +146,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1708, 9);
+            this.label4.Location = new System.Drawing.Point(854, 5);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 34);
+            this.label4.Size = new System.Drawing.Size(61, 17);
             this.label4.TabIndex = 9;
             this.label4.Text = "Method";
             // 
@@ -148,9 +157,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(307, 9);
+            this.label5.Location = new System.Drawing.Point(154, 5);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(282, 34);
+            this.label5.Size = new System.Drawing.Size(140, 17);
             this.label5.TabIndex = 10;
             this.label5.Text = "Server / Hostname";
             // 
@@ -158,9 +168,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(692, 56);
+            this.label6.Location = new System.Drawing.Point(346, 29);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 34);
+            this.label6.Size = new System.Drawing.Size(13, 17);
             this.label6.TabIndex = 11;
             this.label6.Text = "/";
             // 
@@ -168,9 +179,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(1094, 9);
+            this.label7.Location = new System.Drawing.Point(547, 5);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(145, 34);
+            this.label7.Size = new System.Drawing.Size(72, 17);
             this.label7.TabIndex = 12;
             this.label7.Text = "Resource";
             // 
@@ -178,9 +190,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(891, 228);
+            this.label8.Location = new System.Drawing.Point(446, 118);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(150, 34);
+            this.label8.Size = new System.Drawing.Size(75, 17);
             this.label8.TabIndex = 14;
             this.label8.Text = "Response";
             // 
@@ -189,18 +202,20 @@
             this.listResponse.Font = new System.Drawing.Font("Courier New", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listResponse.FormattingEnabled = true;
             this.listResponse.HorizontalScrollbar = true;
-            this.listResponse.ItemHeight = 30;
-            this.listResponse.Location = new System.Drawing.Point(79, 278);
+            this.listResponse.ItemHeight = 17;
+            this.listResponse.Location = new System.Drawing.Point(39, 143);
+            this.listResponse.Margin = new System.Windows.Forms.Padding(2);
             this.listResponse.Name = "listResponse";
-            this.listResponse.Size = new System.Drawing.Size(1775, 1084);
+            this.listResponse.Size = new System.Drawing.Size(890, 548);
             this.listResponse.TabIndex = 15;
             // 
             // btnBrowse
             // 
             this.btnBrowse.Font = new System.Drawing.Font("Arial", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrowse.Location = new System.Drawing.Point(1684, 118);
+            this.btnBrowse.Location = new System.Drawing.Point(844, 61);
+            this.btnBrowse.Margin = new System.Windows.Forms.Padding(2);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(170, 56);
+            this.btnBrowse.Size = new System.Drawing.Size(85, 29);
             this.btnBrowse.TabIndex = 16;
             this.btnBrowse.Text = "B&rowse";
             this.btnBrowse.UseVisualStyleBackColor = true;
@@ -209,9 +224,10 @@
             // textFileName
             // 
             this.textFileName.Font = new System.Drawing.Font("Arial", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textFileName.Location = new System.Drawing.Point(727, 120);
+            this.textFileName.Location = new System.Drawing.Point(360, 62);
+            this.textFileName.Margin = new System.Windows.Forms.Padding(2);
             this.textFileName.Name = "textFileName";
-            this.textFileName.Size = new System.Drawing.Size(938, 39);
+            this.textFileName.Size = new System.Drawing.Size(474, 23);
             this.textFileName.TabIndex = 17;
             this.textFileName.Text = "%userprofile%\\Documents";
             // 
@@ -219,9 +235,10 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(589, 127);
+            this.label9.Location = new System.Drawing.Point(294, 66);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(131, 34);
+            this.label9.Size = new System.Drawing.Size(62, 17);
             this.label9.TabIndex = 18;
             this.label9.Text = "filename:";
             // 
@@ -231,6 +248,9 @@
             this.comboResource.FormattingEnabled = true;
             this.comboResource.Items.AddRange(new object[] {
             "api/v1/session/login",
+            "api/v1/session/application-login",
+            "api/v1/session/network-login",
+            "api/v1/session/saml-login",
             "api/v1/documents/search?custom1={id}&type=ACROBAT",
             "api/v1/documents/{id}/download",
             "api/v1/workspaces/search?custom1={id}&wstype=workspace",
@@ -238,9 +258,10 @@
             "api/v1/groups/search?query=*",
             "Mobility2/MobilityService.svc/MyMatters",
             "Mobility2/MobilityService.svc/Top"});
-            this.comboResource.Location = new System.Drawing.Point(721, 50);
+            this.comboResource.Location = new System.Drawing.Point(360, 26);
+            this.comboResource.Margin = new System.Windows.Forms.Padding(2);
             this.comboResource.Name = "comboResource";
-            this.comboResource.Size = new System.Drawing.Size(944, 40);
+            this.comboResource.Size = new System.Drawing.Size(474, 24);
             this.comboResource.TabIndex = 19;
             this.comboResource.Text = "api/v1/session/login";
             this.comboResource.SelectedIndexChanged += new System.EventHandler(this.comboResource_SelectedIndexChanged);
@@ -248,11 +269,11 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(1933, 1465);
+            this.ClientSize = new System.Drawing.Size(966, 724);
             this.Controls.Add(this.comboResource);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textFileName);
@@ -271,6 +292,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textServer);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "RestSharpApplication1";
