@@ -106,9 +106,10 @@ namespace RestSharpApplication1
             else
             {
                 // easily add HTTP Headers
-                request.AddHeader("X-Auth-Token", strXAuthToken);
+                request.AddHeader("Authorization", "Bearer " + strXAuthToken);
+                request.AddHeader("Cookie", "X-Login-Type=imanage");
                 //request.RequestFormat = DataFormat.Json;
-                request.AddJsonBody(authentication_json());
+                //request.AddJsonBody(authentication_json());
             }
 
             // add files to upload (works with compatible verbs)

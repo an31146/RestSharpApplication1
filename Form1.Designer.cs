@@ -251,7 +251,7 @@
             "api/v1/session/application-login",
             "api/v1/session/network-login",
             "api/v1/session/saml-login",
-            "api/v1/documents/search?custom1={id}&type=ACROBAT",
+            "api/v1/documents/search?custom1={id}&type=ACROBAT&limit=100&offset=0&total=true",
             "api/v1/documents/{id}/download",
             "api/v1/workspaces/search?custom1={id}&wstype=workspace",
             "api/v1/users/search?query=*",
