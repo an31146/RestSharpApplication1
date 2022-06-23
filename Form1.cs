@@ -8,8 +8,6 @@ using RestSharp;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-using Dictionary_NVP = System.Collections.Generic.Dictionary<string, object>;
-
 #pragma warning disable IDE0018 // Inline variable declaration
 #pragma warning disable IDE1006 // Naming Styles
 namespace RestSharpApplication1
@@ -88,13 +86,15 @@ namespace RestSharpApplication1
             if (strXAuthToken == "")
             {
                 // create a dictionary containing name/value pairs
-                Dictionary_NVP credentials = new Dictionary_NVP(2);
-                credentials.Add("userid", strUserID);
-                credentials.Add("password", strPassword);
+                var credentials = new Dictionary<string, string>()
+                {
+                    { "userid", strUserID },
+                    { "password", strPassword }
+                };
 
                 // debug testing: serialize the credentials object and write to VS output window
                 string strJsonBody = SimpleJson.SerializeObject(credentials);
-                //Debug.WriteLine(strJsonBody);
+                Debug.WriteLine(strJsonBody);
 
                 // automatically serializes the credentials object and adds to the request body
                 request.AddJsonBody(credentials);
@@ -109,7 +109,6 @@ namespace RestSharpApplication1
                 request.AddHeader("Authorization", "Bearer " + strXAuthToken);
                 request.AddHeader("Cookie", "X-Login-Type=imanage");
                 //request.RequestFormat = DataFormat.Json;
-                //request.AddJsonBody(authentication_json());
             }
 
             // add files to upload (works with compatible verbs)
@@ -125,7 +124,7 @@ namespace RestSharpApplication1
             {
                 try
                 {
-                    Dictionary_NVP deserialized_obj = SimpleJson.DeserializeObject<Dictionary_NVP>(content);
+                    Dictionary<string, object> deserialized_obj = SimpleJson.DeserializeObject<Dictionary<string, object>>(content);
 
                     // check for an error key
                     if (deserialized_obj.ContainsKey("error"))
@@ -135,21 +134,19 @@ namespace RestSharpApplication1
                         // have you logged in yet, i.e. do we have an empty token?
                         if (strXAuthToken == "")
                         {
-                            //strXAuthToken = (string)deserialized_obj["X-Auth-Token"];
                             object obj1;
                             bool bSuccess = SimpleJson.TryDeserializeObject(content, out obj1);
 
                             JObject obj2 = (JObject)JsonConvert.DeserializeObject(content);
-                            JProperty abc = (JProperty)obj2.First;
-                            if (abc.Name == "X-Auth-Token")
-                                strXAuthToken = (string)abc.Value;
+                            JProperty jprop = (JProperty)obj2.First;
+                            if (jprop.Name == "X-Auth-Token")
+                                strXAuthToken = (string)jprop.Value;
 
                             foreach (string key in deserialized_obj.Keys)
-                                //objArray.Add(key);
                                 listResponse.Items.Add("[" + key + "]:  \t" + deserialized_obj[key].ToString());
                         }
                         else
-                        // some other method was invoked, ASSUMES an array of objects (documents / workspaces / folders) are returned
+                        // some other method was invoked, ASSUMES an array of objects (documents / workspaces / folders) were returned
                         {
                             if (deserialized_obj.ContainsKey("data"))
                             {
@@ -170,9 +167,9 @@ namespace RestSharpApplication1
                                         JToken token_value;
                                         bool bSuccess = obj.TryGetValue("name", out token_value);
                                         if (bSuccess)
-                                            listResponse.Items.Add(String.Format("{0} - {1}", obj["id"].ToString(), token_value.ToString()));
+                                            listResponse.Items.Add(string.Format("{0} - {1}", obj["id"].ToString(), token_value.ToString()));
                                         else
-                                            listResponse.Items.Add(String.Format("{0} - {1} - {2}", obj["user_id"], obj["full_name"], obj["email"]));
+                                            listResponse.Items.Add(string.Format("{0} - {1} - {2}", obj["user_id"], obj["full_name"], obj["email"]));
                                     }
                                 }
                                 else
@@ -186,7 +183,7 @@ namespace RestSharpApplication1
                             {
                                 Debug.WriteLine("count: " + deserialized_obj.Count);
                                 foreach (KeyValuePair<string, object> kvp in deserialized_obj)
-                                    listResponse.Items.Add(String.Format("{0} - {1}", kvp.Key, kvp.Value));
+                                    listResponse.Items.Add(string.Format("{0} - {1}", kvp.Key, kvp.Value));
                             }
                         }   // if (strXAuthToken
                     }   // if (
@@ -225,15 +222,19 @@ namespace RestSharpApplication1
             }
         }
 
-        private Dictionary_NVP authentication_json()
+        private Dictionary<string, object> authentication_json()
         {
-            Dictionary_NVP auth = new Dictionary_NVP(4);
-            auth.Add("appUuid", Guid.NewGuid().ToString());
-            auth.Add("domain", "");
-            auth.Add("password", strPassword);
-            auth.Add("userID", strUserID);
-            Dictionary_NVP encap = new Dictionary_NVP(1);
-            encap.Add("Authentication", auth);
+            var auth = new Dictionary<string, string>()
+            {
+                { "appUuid", Guid.NewGuid().ToString() },
+                { "domain", "" },
+                { "password", strPassword },
+                { "userID", strUserID }
+            };
+            var encap = new Dictionary<string, object>()
+            {
+                { "Authentication", auth }
+            };
 
             return encap;
         }
