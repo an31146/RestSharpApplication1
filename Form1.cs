@@ -10,15 +10,17 @@ using Newtonsoft.Json.Linq;
 
 using Dictionary_NVP = System.Collections.Generic.Dictionary<string, object>;
 
+#pragma warning disable IDE0018 // Inline variable declaration
+#pragma warning disable IDE1006 // Naming Styles
 namespace RestSharpApplication1
 {
     public partial class Form1 : Form
     {
-        string strServer;
-        string strUserID;
-        string strPassword;
-        string strResource;
-        string strMethod;
+        string strServer = "";
+        string strUserID = "";
+        string strPassword = "";
+        string strResource = "";
+        string strMethod = "";
         string strXAuthToken = "";
         string strFileName = "";
         struct auth_struct
@@ -68,18 +70,18 @@ namespace RestSharpApplication1
             var client = new RestClient("https://" + strServer);
             Debug.WriteLine(client.BaseUrl.Port + "\n" + ServicePointManager.SecurityProtocol.ToString());
 
-            Method httpMeth = Method.PUT;               // default HTTP method
+            Method method = Method.PUT;               // default HTTP method
             if (strMethod == "GET")
-                httpMeth = Method.GET;
+                method = Method.GET;
             if (strMethod == "POST")
-                httpMeth = Method.POST;
+                method = Method.POST;
             if (strMethod == "PATCH")
-                httpMeth = Method.PATCH;
+                method = Method.PATCH;
             if (strMethod == "DELETE")
-                httpMeth = Method.DELETE;
+                method = Method.DELETE;
 
             // Create request based on the resource and method
-            var request = new RestRequest(strResource, httpMeth);
+            var request = new RestRequest(strResource, method);
             request.AddHeader("Content-Type", "application/json");
 
             // If we haven't logged-in yet:
@@ -236,3 +238,5 @@ namespace RestSharpApplication1
         }
     }
 }
+#pragma warning restore IDE0018 // Inline variable declaration
+#pragma warning restore IDE1006 // Naming Styles

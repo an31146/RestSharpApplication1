@@ -260,3 +260,5 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/MigrationBackup/6948a355/RestSharpApplication1/NuGetUpgradeLog.html
+/MigrationBackup/6948a355/RestSharpApplication1
